@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiders CTF - Challenges</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding-top: 50px;
+        }
+        .social-icons a {
+            color: #fff;
+            margin-right: 10px;
+        }
+        .social-icons a:hover {
+            color: #ffcc00;
+        }
+        .login-link a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .challenge-title {
+            color: #ff0000;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .challenge-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <img class="w-100 mx-auto d-block" style="max-width: 500px;padding: 50px;padding-top: 14vh;" src="/files/f12d34b971b7dff2b8563e33f5068dee/poto.png" alt="Spiders CTF Logo" />
+                <h1 class="challenge-title">Welcome to Spiders CTF Challenges</h1>
+                <p class="challenge-description">Get ready to test your skills in our exciting challenges. Follow us on social media to stay updated.</p>
+                <div class="social-icons">
+                    <a href="https://twitter.com/ctfdio"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com/ctfdio"><i class="fab fa-facebook fa-2x" aria-hidden="true"></i></a>
+                    <a href="https://github.com/ctfd"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+                </div>
+                <div class="login-link">
+                    <p><a href="admin">Click here</a> to login and setup your CTF</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

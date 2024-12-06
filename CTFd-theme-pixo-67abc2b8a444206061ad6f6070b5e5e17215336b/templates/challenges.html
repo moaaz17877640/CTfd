@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ url_for('views.themes', path='css/challenge-board.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>Challenges</h1>
+    </div>
+</div>
+
+<!-- Countdown Timer Section -->
+<div class="container text-center mb-4">
+    <h2>Time Remaining</h2>
+    <div id="countdown-timer" class="display-4">
+        <!-- Countdown timer will be displayed here -->
+    </div>
+</div>
+
+<div class="modal fade" id="challenge-window" tabindex="-1" role="dialog">
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% include "components/errors.html" %}
+        </div>
+    </div>
+
+    <div id='challenges-board'>
+        <div class="min-vh-50 d-flex align-items-center">
+            <div class="text-center w-100">
+                <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block entrypoint %}
+    <script defer src="{{ url_for('views.themes', path='js/pages/challenges.js') }}"></script>
+    <script defer>
+        // Countdown timer script
+        function startCountdown(endTime) {
+            const timerElement = document.getElementById('countdown-timer');
+            
+            function updateTimer() {
+                const now = new Date();
+                const timeRemaining = endTime - now;
+
+                if (timeRemaining <= 0) {
+                    timerElement.textContent = "Time's up!";
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            const timerInterval = setInterval(updateTimer, 1000);
+            updateTimer();  // Initial call
+        }
+
+        // Example end time for demonstration (set this to your actual end time)
+        const endTime = new Date('2024-08-31T23:59:59'); // Format: YYYY-MM-DDTHH:MM:SS
+        startCountdown(endTime);
+    </script>
+{% endblock %}

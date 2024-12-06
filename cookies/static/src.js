@@ -1,0 +1,1 @@
+var flag="Sp1d3rs{C00k13s_N0t_@lw@ys_s3cUr3}";
